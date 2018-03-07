@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/08/小知识点/index.html">
 <meta property="og:site_name" content="Xwl&#39;s Blog">
 <meta property="og:description" content="1. CGD网络并发，统一刷新Here is the code:">
-<meta property="og:updated_time" content="2018-03-07T13:16:58.658Z">
+<meta property="og:updated_time" content="2018-03-07T13:22:07.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小知识点">
 <meta name="twitter:description" content="1. CGD网络并发，统一刷新Here is the code:">
@@ -166,7 +166,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-CGD网络并发，统一刷新"><a href="#1-CGD网络并发，统一刷新" class="headerlink" title="1. CGD网络并发，统一刷新"></a>1. CGD网络并发，统一刷新</h2><p>Here is the code:<br><a id="more"></a></p>
+        <h2 id="1-CGD网络并发，统一刷新"><a href="#1-CGD网络并发，统一刷新" class="headerlink" title="1. CGD网络并发，统一刷新"></a>1. CGD网络并发，统一刷新</h2><p>Here is the code:</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/***</span><br><span class="line">    网络请求成功，数据处理完调用</span><br><span class="line">    dispatch_group_leave(group);</span><br><span class="line">***/</span><br><span class="line">dispatch_group_t group = dispatch_group_create();</span><br><span class="line">dispatch_group_enter(group);</span><br><span class="line">dispatch_async(dispatch_get_global_queue(0, 0), ^&#123;</span><br><span class="line">     // 第一个请求</span><br><span class="line">    [self videoDataReqauest:group];</span><br><span class="line">     </span><br><span class="line">&#125;);</span><br><span class="line">dispatch_group_enter(group);</span><br><span class="line">dispatch_async(dispatch_get_global_queue(0, 0), ^&#123;</span><br><span class="line">    // 第二个请求</span><br><span class="line">    [self relevantVideoDataReqauest:group];</span><br><span class="line">      ***网络请求成功，数据处理完调用***</span><br><span class="line">     dispatch_group_leave(group);</span><br><span class="line">&#125;);</span><br><span class="line">dispatch_group_notify(group, dispatch_get_global_queue(0, 0), ^&#123;</span><br><span class="line">    dispatch_sync(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">         // 刷新两个数据</span><br><span class="line">        [self refreshData];</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
       
