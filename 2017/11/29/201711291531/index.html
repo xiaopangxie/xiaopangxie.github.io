@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Xwl&#39;s Blog</title>
+  <title>App端json解析错误 | Xwl&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Xwl&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="遇到的问题在最近的短视频项目开发中，经常发现个别的短视频播放出现错误,排查发现是因为我们爬虫系统爬取的弹幕数据出现特殊字符导致的json解析错误而引起的app崩溃 JSON介绍JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。 易于人阅读和编写。同时也易于机器解析和生成。 它基于JavaScript Programming Language, Stand">
+<meta name="keywords" content="json">
+<meta property="og:type" content="article">
+<meta property="og:title" content="App端json解析错误">
+<meta property="og:url" content="http://yoursite.com/2017/11/29/201711291531/index.html">
 <meta property="og:site_name" content="Xwl&#39;s Blog">
+<meta property="og:description" content="遇到的问题在最近的短视频项目开发中，经常发现个别的短视频播放出现错误,排查发现是因为我们爬虫系统爬取的弹幕数据出现特殊字符导致的json解析错误而引起的app崩溃 JSON介绍JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。 易于人阅读和编写。同时也易于机器解析和生成。 它基于JavaScript Programming Language, Stand">
+<meta property="og:updated_time" content="2018-05-11T06:26:18.828Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xwl&#39;s Blog">
+<meta name="twitter:title" content="App端json解析错误">
+<meta name="twitter:description" content="遇到的问题在最近的短视频项目开发中，经常发现个别的短视频播放出现错误,排查发现是因为我们爬虫系统爬取的弹幕数据出现特殊字符导致的json解析错误而引起的app崩溃 JSON介绍JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。 易于人阅读和编写。同时也易于机器解析和生成。 它基于JavaScript Programming Language, Stand">
   
     <link rel="alternative" href="/atom.xml" title="Xwl&#39;s Blog" type="application/atom+xml">
   
@@ -141,60 +146,134 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="w-201711291531" class="article article-type-w " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/08/小知识点/" class="archive-article-date">
-  	<time datetime="2018-02-08T05:35:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/08/小知识点/">小知识点</a>
+    <h1 class="article-title" itemprop="name">
+      App端json解析错误
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/11/29/201711291531/" class="archive-article-date">
+  	<time datetime="2017-11-29T07:32:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>在最近的短视频项目开发中，经常发现个别的短视频播放出现错误,排查发现是因为我们爬虫系统爬取的弹幕数据出现特殊字符导致的json解析错误而引起的app崩溃</p>
+<h2 id="JSON介绍"><a href="#JSON介绍" class="headerlink" title="JSON介绍"></a>JSON介绍</h2><p>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。 易于人阅读和编写。同时也易于机器解析和生成。 它基于JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999的一个子集。 JSON采用完全独立于语言的文本格式，但是也使用了类似于C语言家族的习惯（包括C, C++, C#, Java, JavaScript, Perl, Python等）。 这些特性使JSON成为理想的数据交换语言。<a href="http://www.json.org/json-zh.html" target="_blank" rel="noopener">介绍 JSON</a></p>
+<h2 id="json不能出现的特殊字符"><a href="#json不能出现的特殊字符" class="headerlink" title="json不能出现的特殊字符"></a>json不能出现的特殊字符</h2><p>1.json结构中使用的标示符：都为英文格式 冒号 :双引号  “” 大括号 {} 方括号 [] 逗号  ,<br>2.使用注意要确保在json的结构中，使用以上标准的标示符来构建结构。其中的键值串都由双引号引起来，键值串中不能包含双引号和转义字符。在键值串中可以出现除了双引号之外的以上其它四种标示符，不会出错。<br>3.需要处理的转义字符 \a 响铃(BEL)  \b 退格(BS) \e 科学计数法 \f 换页(FF)      \n 换行(LF)   \r 回车(CR)   \t 水平制表(HT)   \v 垂直制表(VT)   \ 反斜杠      \” 双引号字符   \0 空字符(NULL)<br>4.解决方案   服务器端，将字符串中的回车换行用类似<br>的字符串代替，双引号也一样，比如<dqmv>客户端，解析前，将转义字符全部删掉。解析之后，将内容显示之前，将回车换行和双引号再还原回来</dqmv></p>
+<h2 id="写一个数据库函数将弹幕数据中的特殊字符给干掉"><a href="#写一个数据库函数将弹幕数据中的特殊字符给干掉" class="headerlink" title="写一个数据库函数将弹幕数据中的特殊字符给干掉"></a>写一个数据库函数将弹幕数据中的特殊字符给干掉</h2><p>由于是爬取的弹幕数据并不需要对这些弹幕数据的特殊字符进行转义，然后在视频播放屏幕上显示。所以我直接在数据中写函数将弹幕数据中的特殊字符给处理，已解决app会奔溃的问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">-----------------------------------------------------</span><br><span class="line">--函数功能：过滤字符里面的特殊字符</span><br><span class="line">-----------------------------------------------------</span><br><span class="line">--参数说明：</span><br><span class="line">-----------------------------------------------------</span><br><span class="line">/*</span><br><span class="line">	@SourceSql 源字符</span><br><span class="line">*/</span><br><span class="line">-----------------------------------------------------</span><br><span class="line">--符号编码：</span><br><span class="line">-----------------------------------------------------</span><br><span class="line">/*</span><br><span class="line">	8 BS (backspace) 退格</span><br><span class="line">	9 HT (horizontal tab) 水平制表符</span><br><span class="line">	10 LF (NL line feed, new line) 换行键</span><br><span class="line">	11 VT (vertical tab) 垂直制表符</span><br><span class="line">	12 FF (NP form feed, new page) 换页键</span><br><span class="line">	13 CR (carriage return) 回车键</span><br><span class="line">	32 space 空格</span><br><span class="line">	34 &quot;</span><br><span class="line">	39 &apos;</span><br><span class="line">	92 \  转义字符</span><br><span class="line">*/</span><br><span class="line">-----------------------------------------------------</span><br><span class="line">create function [dbo].[GetFilterString]</span><br><span class="line">(</span><br><span class="line">	@SourceSql varchar(500)</span><br><span class="line">)</span><br><span class="line">returns varchar(500)</span><br><span class="line">as</span><br><span class="line">begin</span><br><span class="line">	declare @temp varchar(500)=&apos;&apos;</span><br><span class="line">	set @temp = @SourceSql </span><br><span class="line">	if (@SourceSql is null) </span><br><span class="line">	begin</span><br><span class="line">		set @temp = replace(@temp,char(8),&apos;&apos;)</span><br><span class="line">		set @temp = replace(@temp,char(9),&apos;&apos;)</span><br><span class="line">		set @temp = replace(@temp,char(10),&apos;&apos;)</span><br><span class="line">		set @temp = replace(@temp,char(11),&apos;&apos;)</span><br><span class="line">		set @temp = replace(@temp,char(12),&apos;&apos;)</span><br><span class="line">		set @temp = replace(@temp,char(13),&apos;&apos;)</span><br><span class="line">		set @temp = replace(@temp,char(32),&apos;&apos;)</span><br><span class="line">		set @temp = replace(@temp,char(34),&apos;&apos;)</span><br><span class="line">		set @temp = replace(@temp,char(39),&apos;&apos;)</span><br><span class="line">		set @temp = replace(@temp,char(92),&apos;&apos;)</span><br><span class="line">	end</span><br><span class="line">	return @temp</span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">json</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/json//" class="article-tag-list-link color5">json</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/02/08/小知识点/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          小知识点
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -215,8 +294,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
